@@ -143,7 +143,8 @@ class ToastificationManager {
       // TODO(payam): add the condition before the delay
       /// we will remove the [_overlayEntry] if there are no notifications
       Future.delayed(
-        removedItem.animationDuration ?? config.animationDuration,
+        (removedItem.animationDuration ?? config.animationDuration) +
+            Durations.medium1,
         () {
           if (_notifications.isEmpty) {
             _overlayEntry?.remove();
